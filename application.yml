@@ -23,9 +23,6 @@ management.endpoints.web.exposure.include: "*"
 # Waiting issue https://github.com/spring-projects/spring-boot/issues/13042
 spring.cloud.refresh.refreshable: false
 
-# Logging
-logging.level.org.springframework: INFO
-
 # Metrics
 management:
   endpoint:
@@ -41,3 +38,22 @@ management:
     export:
       prometheus:
         enabled: true
+
+# Logging
+logging.level.org.springframework: INFO
+spring.logging:
+  level:
+    org.springframework: WARN
+    org.hibernate: WARN
+# Logstash config
+spring.logstash:
+    server: localhost
+    port: 5000
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  logstash:
+    server: logstash
+    port: 5000
