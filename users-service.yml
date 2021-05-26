@@ -2,14 +2,17 @@ spring:
   config:
     activate:
       on-profile: default
-info: 
+info:
+  app:
+    uuid: ${app_uuid}
   tags:
     name: ${spring.application.name}
-    profile: ${spring.cloud.config.profile}
+    app-id: ${info.app.uuid}
+
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random.uuid}
+    instance-id: ${spring.application.name}:${app_uuid}
     # Lease Reneval and Expiration times - to unregister in eureka
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
