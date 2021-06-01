@@ -1,5 +1,5 @@
 server:
-  port: 8998
+  port: 8997
 
 spring:
   config:
@@ -18,21 +18,7 @@ spring:
   datasource:
     schema: classpath*:db/mysql/schema.sql
     data: classpath*:db/mysql/data.sql
-    url: jdbc:mysql://localhost:3306/formality?useSSL=false
+    url: jdbc:mysql://localhost:3307/emotions?useSSL=false
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
-
----
-# spring:
-#   config:
-#     activate:
-#       on-profile: docker
-#   zipkin:
-#     baseUrl: http://tracing-server:9411
-# server:
-#   port: 8083
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: http://discovery-server:8761/eureka/
