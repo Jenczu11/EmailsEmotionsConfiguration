@@ -20,7 +20,7 @@ spring:
     schema: classpath*:db/mysql/schema.sql
     data: classpath*:db/mysql/data.sql
     url: jdbc:mysql://localhost:3306/formality?useSSL=false
-    username: root
+    username: user
     password: emailsemotions
     initialization-mode: ALWAYS
 
