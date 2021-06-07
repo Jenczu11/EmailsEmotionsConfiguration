@@ -1,13 +1,22 @@
 server:
   port: 9090
+info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
 eureka:   
   instance:
+    instance-id: ${spring.application.name}:${info.app.uuid}
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
     metadata-map:
       startup: ${random.int}    #needed to trigger info and endpoint update after restart
   client:
     registryFetchIntervalSeconds: 5
+    healthcheck: 
+      enabled: true
 management:
   endpoints:
     web:
@@ -21,7 +30,21 @@ spring:
   config:
     activate:
       on-profile: docker
+info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
 eureka:
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${info.app.uuid}
+    # Lease Reneval and Expiration times - to unregister in eureka
+    leaseRenewalIntervalInSeconds: 15
+    leaseExpirationDurationInSeconds: 30
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
