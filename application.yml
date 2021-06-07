@@ -1,5 +1,4 @@
 # COMMON APPLICATION PROPERTIES
-
 server:
   # start services on random port by default
   port: 0

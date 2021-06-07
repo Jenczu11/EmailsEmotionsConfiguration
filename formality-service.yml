@@ -22,17 +22,21 @@ spring:
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
-
 ---
-# spring:
-#   config:
-#     activate:
-#       on-profile: docker
+spring:
+  config:
+    activate:
+      on-profile: docker
+  datasource:
+    url: jdbc:mysql://db-formality:3306/formality?useSSL=false
+    username: user
+    password: emailsemotions
+    initialization-mode: ALWAYS
 #   zipkin:
 #     baseUrl: http://tracing-server:9411
 # server:
 #   port: 8083
-# eureka:
-#   client:
-#     serviceUrl:
-#       defaultZone: http://discovery-server:8761/eureka/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
