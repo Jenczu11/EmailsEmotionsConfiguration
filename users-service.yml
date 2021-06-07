@@ -36,7 +36,7 @@ spring:
 
 info:
   app:
-    uuid: ${random.uuid}
+    uuid: ${appuuid}
   tags:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
