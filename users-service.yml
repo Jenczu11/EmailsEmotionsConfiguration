@@ -8,7 +8,6 @@ info:
   tags:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
-
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
@@ -16,6 +15,7 @@ eureka:
     # Lease Reneval and Expiration times - to unregister in eureka
     leaseRenewalIntervalInSeconds: 15
     leaseExpirationDurationInSeconds: 30
+    health-check-url-path: /actuator/health
   client:
     healthcheck:
       enabled: true
@@ -38,7 +38,6 @@ info:
   tags:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
-
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
@@ -46,6 +45,7 @@ eureka:
     # Lease Reneval and Expiration times - to unregister in eureka
     leaseRenewalIntervalInSeconds: 15
     leaseExpirationDurationInSeconds: 30
+    health-check-url-path: /actuator/health
   client:
     healthcheck:
       enabled: true
