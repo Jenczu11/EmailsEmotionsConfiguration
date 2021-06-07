@@ -25,7 +25,7 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:mysql://dbusers:3308/users?useSSL=false
+    url: jdbc:mysql://db-users:3306/users?useSSL=false
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
