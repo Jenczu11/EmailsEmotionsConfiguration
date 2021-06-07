@@ -31,12 +31,12 @@ spring:
     initialization-mode: ALWAYS
 #   zipkin:
 #     baseUrl: http://tracing-server:9411
-server:
-  port: 8083
+# server:
+#   port: 8083
 
 info:
   app:
-    uuid: ${app_uuid}
+    uuid: ${random.uuid}
   tags:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
@@ -44,7 +44,7 @@ info:
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random.uuid}
+    instance-id: ${spring.application.name}:${info.app.uuid}
     # Lease Reneval and Expiration times - to unregister in eureka
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
