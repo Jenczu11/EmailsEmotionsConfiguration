@@ -12,7 +12,7 @@ info:
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random_uuid}
+    instance-id: ${spring.application.name}:${random.uuid}
     # Lease Reneval and Expiration times - to unregister in eureka
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
@@ -44,7 +44,7 @@ info:
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random_uuid}
+    instance-id: ${spring.application.name}:${random.uuid}
     # Lease Reneval and Expiration times - to unregister in eureka
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
