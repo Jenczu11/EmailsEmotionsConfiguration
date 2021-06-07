@@ -16,7 +16,12 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: none
-
+ info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
 # Enable all Actuators and not only the two available by default /health and /info starting Spring Boot 2.0
