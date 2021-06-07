@@ -16,7 +16,7 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: none
- info:
+info:
   app:
     uuid: ${app_uuid}
   tags:
