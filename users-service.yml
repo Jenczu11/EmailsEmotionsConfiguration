@@ -31,8 +31,8 @@ spring:
     initialization-mode: ALWAYS
 #   zipkin:
 #     baseUrl: http://tracing-server:9411
-# server:
-#   port: 8083
+server:
+  port: 8083
 eureka:
   client:
     serviceUrl:
