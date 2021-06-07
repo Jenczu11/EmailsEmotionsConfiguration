@@ -1,5 +1,22 @@
 server:
   port: 8080
+info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
+
+eureka:
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${info.app.uuid}
+    # Lease Reneval and Expiration times - to unregister in eureka
+    leaseRenewalIntervalInSeconds: 15
+    leaseExpirationDurationInSeconds: 30
+  client:
+    healthcheck:
+      enabled: true
 ---
 spring:
   config:
@@ -7,7 +24,22 @@ spring:
       on-profile: docker
   # zipkin:
   #   baseUrl: http://tracing-server:9411
+info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
+
 eureka:
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${info.app.uuid}
+    # Lease Reneval and Expiration times - to unregister in eureka
+    leaseRenewalIntervalInSeconds: 15
+    leaseExpirationDurationInSeconds: 30
   client:
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/
