@@ -13,3 +13,9 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
