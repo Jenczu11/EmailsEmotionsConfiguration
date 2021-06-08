@@ -2,6 +2,11 @@ spring:
   config:
     activate:
       on-profile: default
+  datasource:
+    url: jdbc:mysql://localhost:3308/users?useSSL=false
+    username: user
+    password: emailsemotions
+    initialization-mode: ALWAYS
 info:
   app:
     uuid: ${app_uuid}
@@ -31,7 +36,6 @@ spring:
     initialization-mode: ALWAYS
 #   zipkin:
 #     baseUrl: http://tracing-server:9411
-
 info:
   app:
     uuid: ${app_uuid}

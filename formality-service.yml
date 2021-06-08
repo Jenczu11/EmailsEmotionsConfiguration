@@ -5,6 +5,11 @@ spring:
   config:
     activate:
       on-profile: default
+  datasource:
+    url: jdbc:mysql://localhost:3306/formality?useSSL=false
+    username: user
+    password: emailsemotions
+    initialization-mode: ALWAYS
 info:
   app:
     uuid: ${app_uuid}
