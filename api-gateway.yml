@@ -7,6 +7,12 @@ info:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
 
+jwt:
+  secret: b3ce19667a24ef694e0e41bdb476d107817d62f294fd45njkhasfih3485ru029rhjn29udfj9sjja9fhaopkpkda
+  # 30 minutes
+  expirationMs: 1800000
+  deleteExpiredTokens:
+    cron: 1 * * * * ?
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
@@ -24,7 +30,6 @@ spring:
       on-profile: docker
   # zipkin:
   #   baseUrl: http://tracing-server:9411
-info:
   app:
     uuid: ${app_uuid}
   tags:
