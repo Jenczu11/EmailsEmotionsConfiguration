@@ -48,6 +48,8 @@ spring:
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
+server:
+  port: 8080
 info:
   app:
     uuid: ${app_uuid}
