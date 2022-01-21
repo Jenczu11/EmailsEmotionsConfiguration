@@ -6,7 +6,15 @@ info:
   tags:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
-
+spring:
+  config:
+    activate:
+      on-profile: default
+  datasource:
+    url: jdbc:mysql://localhost:3308/users?useSSL=false
+    username: user
+    password: emailsemotions
+    initialization-mode: ALWAYS
 jwt:
   secret: b3ce19667a24ef694e0e41bdb476d107817d62f294fd45njkhasfih3485ru029rhjn29udfj9sjja9fhaopkpkda
   # 30 minutes
@@ -35,6 +43,11 @@ spring:
   tags:
     name: ${spring.application.name}
     app-id: ${info.app.uuid}
+  datasource:
+    url: jdbc:mysql://db-users:3306/users?useSSL=false
+    username: user
+    password: emailsemotions
+    initialization-mode: ALWAYS
 
 eureka:
   instance:
