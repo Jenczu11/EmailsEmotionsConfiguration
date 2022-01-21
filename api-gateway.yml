@@ -48,6 +48,12 @@ spring:
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
+info:
+  app:
+    uuid: ${app_uuid}
+  tags:
+    name: ${spring.application.name}
+    app-id: ${info.app.uuid}
 jwt:
   secret: b3ce19667a24ef694e0e41bdb476d107817d62f294fd45njkhasfih3485ru029rhjn29udfj9sjja9fhaopkpkda
   # 30 minutes
