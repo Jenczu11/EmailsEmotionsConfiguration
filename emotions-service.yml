@@ -46,7 +46,7 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:mysql://db-emotions:3306/emotions?useSSL=false
+    url: jdbc:mysql://db-emotions:3306/emotions?useSSL=false&useUnicode=yes&characterEncoding=UTF-8
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
