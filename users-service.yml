@@ -30,7 +30,7 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:mysql://db-users:3306/users?useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+    url: jdbc:mysql://db-users:3306/users?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: user
     password: emailsemotions
     initialization-mode: ALWAYS
